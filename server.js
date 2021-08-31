@@ -14,6 +14,15 @@ app.get('/',(req,res)=>{
     res.send('Hello World')
 });
 
+app.get('/api',(req,res)=>
+{
+
+});
+
+app.get('/*',(req,res)=>{
+    res.send('Hello from somewhere else')
+});
+
 app.listen(process.env.HOST_PORT, ()=>
 {
     console.log("listening at http://"+ process.env.HOST_NAME +":"+ process.env.HOST_PORT);
