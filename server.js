@@ -17,9 +17,9 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.use('/users', usersRouter);
-app.use('/products', productsRouter);
-app.use('/contacts/api', contactsRouter);
+app.use('/api/users', usersRouter);
+app.use('/api/products', productsRouter);
+app.use('/api/contacts', contactsRouter);
 
 
 app.use(express.static(path.join(__dirname, 'public')));
