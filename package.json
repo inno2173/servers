@@ -25,6 +25,7 @@
     "helmet": "^4.6.0",
     "moment": "^2.29.1",
     "mongoose": "^6.0.2",
+    "morgan": "^1.10.0",
     "nodemon": "^2.0.12",
     "underscore": "^1.13.1"
   }
