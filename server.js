@@ -19,7 +19,7 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use('/users', usersRouter);
 app.use('/products', productsRouter);
-app.use('/contacts', contactsRouter);
+app.use('/contacts/api', contactsRouter);
 
 
 app.use(express.static(path.join(__dirname, 'public')));
