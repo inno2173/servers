@@ -4,6 +4,7 @@ var helmet = require('helmet');
 var cors = require('cors')
 var path = require('path');
 var logger = require('morgan');
+var mongoose = require('mongoose')
 var app = express();
 
 var indexRouter = require('./routes/index');
@@ -38,6 +39,27 @@ app.get('/api/.',(req,res)=>
 /* app.get('/*',(req,res)=>{
     res.send('Hello from somewhere else')
 }); */
+
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_CLUSTER_NAME}.d236u.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`;
+mongoose.connect(uri,
+    {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        //useFindAndModify: false,
+        //useCreateIndex: true
+    },
+    (err) => {
+
+        if(err)
+        {
+            console.log("Connection to MongoDB failed "+ JSON.stringify(err, undefined,2));
+            return;
+        }
+        console.log('Successfully connected to MongoDB');
+    }
+);
+
+
 
 app.listen(process.env.HOST_PORT, ()=>
 {
