@@ -4,12 +4,10 @@ var router = express.Router();
 
 
 router.get('/', (req, res, next) => {
-    /* Product.find((err, data) => {
+     Product.find((err, data) => {
         if (err) throw err;
         res.status(200).send(data);
-    }) */
-
-    res.send("I am here ");
+    })
 });
 
 router.get('/:id', (req, res,next) => {
