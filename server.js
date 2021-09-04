@@ -30,12 +30,12 @@ app.get('/api/.',(req,res)=>
 
 });
 
-/* app.get('/*',(req,res)=>{
+ app.get('/*',(req,res)=>{
     res.send('Hello from somewhere else')
-}); */
+}); 
 
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_CLUSTER_NAME}.d236u.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`;
-mongoose.connect(uri,
+/* mongoose.connect(uri,
     {
         useNewUrlParser: true,
         useUnifiedTopology: true,
@@ -51,7 +51,7 @@ mongoose.connect(uri,
         }
         console.log('Successfully connected to MongoDB');
     }
-);
+); */
 
 
 
