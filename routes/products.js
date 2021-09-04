@@ -43,6 +43,4 @@ router.delete('/:id', function (req, res) {
         res.status(200).send("Deleted successfully");
     });
 });
-
-
 module.exports = router;
