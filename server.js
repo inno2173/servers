@@ -1,9 +1,6 @@
 require('dotenv').config();
 var express = require('express');
-var helmet = require('helmet');
-var cors = require('cors')
 var path = require('path');
-var logger = require('morgan');
 var mongoose = require('mongoose')
 var app = express();
 
@@ -12,9 +9,6 @@ var usersRouter = require('./routes/users');
 var productsRouter = require('./routes/products');
 var contactsRouter = require('./routes/contact');
 
-
-app.use(helmet());
-app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
