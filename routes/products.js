@@ -10,10 +10,23 @@ router.get('/', (req, res, next) => {
     })
 });
 
-router.get('/:id', (req, res,next) => {
+router.get('/:category', (req,res,next)=>
+{
+    var query = { category: req.params.category };
+    Product.find(query,(err,data)=>
+    {
+        if (!data)
+        return res.status(404).send("Products not found with the given Category");
+    if (err) throw err;
+    res.status(200).send(data);
+    });
+})
+
+router.get('/find/:id', (req, res) => {
+    var query = { id: req.params.id };
     Product.findById(req.params.id, (err, data) => {
         if (!data)
-            return res.status(404).send("Product not found with the given ID");
+            return res.status(404).send("Product_- not found with the given ID");
         if (err) throw err;
         res.status(200).send(data);
     });
